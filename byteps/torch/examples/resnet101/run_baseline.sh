@@ -45,7 +45,7 @@ model="resnet101"
 echo "FP32 baseline"
 BENCHMARK_ARGS="--compress --comm byteps"
 python3 -m torch.distributed.launch $DISTRIBUTED_ARGS $path/main.py --model ${model} --epochs 5 --batch-size 32 --speed_test #${BENCHMARK_ARGS}
-
+sleep 5
 
 # BytePS-Compress
 echo "BytePS-Compress"
