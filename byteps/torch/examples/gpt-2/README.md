@@ -1,5 +1,9 @@
 # GPT-2
 
+You can run the model step by step as follows. 
+The dataset and the dependencies are all set after "bash install.sh". 
+Go to "How to run" directly.
+
 ## Download the dataset
 ```bash
 mkdir ~/data
@@ -16,40 +20,32 @@ bash run_prepare.sh
 ```
 
 ## How to run
-**Note**: Make sure the dataset is in the right location. Set the DMLC_PS_ROOT_URI and ifname in run_espresso.sh and run_baseline.sh.
-Make sure it runs on NVLink-based GPU machines.
-
-DMLC_PS_ROOT_URI: the IP address of the root GPU machine
+**Note**: Make sure the dataset is in the right location and it runs on NVLink-based GPU machines.
+Set ifname in run_espresso.sh and run_baseline.sh.
 
 ifname: the network interface card name, e.g., eth0, eth2
 
-### Espresso
-Run on each machine
 ```bash
-bash run_espresso.sh WORKERS ID
+export DMLC_PS_ROOT_URI="ip"
+export DMLC_NUM_WORKER=WORKERS
+export DMLC_WORKER_ID=WORKER_ID
 ```
+
+DMLC_PS_ROOT_URI: the IP address of the root GPU machine
+
 WORKERS: the number of GPU machines in the training
 
 ID: the id of a machine. machines have distinct IDs that start from 0
 
-**An example**:
-Suppose there are four GPU machines, then WORKERS=4 and ID is from 0-3. 
-The ID of the root GPU machine is 0.
-The command on each GPU machine is
+
+### Espresso
+Run on each machine
 ```bash
-bash run_espresso.sh 4 ID
+bash run_espresso.sh
 ```
 
 ### Baselines
 Run on each machine
 ```bash
-bash run_baseline.sh WORKERS ID
-```  
-
-**An example**:
-Suppose there are four GPU machines, then WORKERS=4 and ID is from 0-3. 
-The ID of the root GPU machine is 0.
-The command on each GPU machine is
-```bash
-bash run_baseline.sh 4 ID
-```
+bash run_baseline.sh
+``` 

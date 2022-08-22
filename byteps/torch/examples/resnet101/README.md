@@ -1,5 +1,8 @@
 # ResNet101
 
+You can run the model step by step as follows. 
+The dataset and the dependencies are all set after "bash install.sh". 
+Go to "How to run" directly.
 
 ## Download the dataset
 ```bash
@@ -11,42 +14,32 @@ tar xf imagewang.tgz
 The default location of the dataset is ~/data, and the dataset for VGG16 and ResNet101 is in ~/data/imagewang
 
 ## How to run
-**Note**: Make sure the dataset is in the right location. Set DMLC_PS_ROOT_URI and ifname in run_espresso.sh and run_baseline.sh.
-Make sure it runs on PCIe-only GPU machines.
+**Note**: Make sure it runs on NVLink-based GPU machines.
+Set ifname in run_espresso.sh and run_baseline.sh.
+
+ifname: the network interface card name, e.g., eth0, eth2
+
+```bash
+export DMLC_PS_ROOT_URI="ip"
+export DMLC_NUM_WORKER=WORKERS
+export DMLC_WORKER_ID=WORKER_ID
+```
 
 DMLC_PS_ROOT_URI: the IP address of the root GPU machine
 
-ifname: the network interface card name, e.g., eth0, eth2
+WORKERS: the number of GPU machines in the training
+
+ID: the id of a machine. machines have distinct IDs that start from 0
 
 
 ### Espresso
 Run on each machine
 ```bash
-bash run_espresso.sh WORKERS ID
+bash run_espresso.sh
 ```
-WORKERS is the number of machines in the training
-
-ID is the id of a machine. machines have distinct IDs
-
-**An example**:
-Suppose there are four GPU machines, then WORKERS=4 and ID is from 0-3. 
-The ID of the root GPU machine is 0.
-The command on each GPU machine is
-```bash
-bash run_espresso.sh 4 ID
-```
-
 
 ### Baselines
 Run on each machine
 ```bash
-bash run_baseline.sh WORKERS ID
+bash run_baseline.sh
 ``` 
-
-**An example**:
-Suppose there are four GPU machines, then WORKERS=4 and ID is from 0-3. 
-The ID of the root GPU machine is 0.
-The command on each GPU machine is
-```bash
-bash run_baseline.sh 4 ID
-```

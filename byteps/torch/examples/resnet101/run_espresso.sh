@@ -4,8 +4,7 @@ path="`dirname $0`"
 set -x
 
 # set DMLC_PS_ROOT_URI with the IP address of the root GPU machine and ifname with the NIC name
-ifname="eth0"
-export DMLC_PS_ROOT_URI="10.188.181.138"
+ifname=$1
 
 compress_ratio=0.01
 gpus=0,1,2,3,4,5,6,7
@@ -15,7 +14,7 @@ export NCCL_IB_DISABLE=1
 export NCCL_IB_GID_INDEX=3 
 export NCCL_IB_HCA=mlx5_0 
 export NCCL_SOCKET_IFNAME=${ifname}
-export DMLC_NUM_WORKER=$1
+# export DMLC_NUM_WORKER=$1
 export DMLC_NUM_SERVER=$DMLC_NUM_WORKER
 export DMLC_NODE_HOST="$(/sbin/ip -o -4 addr list ${ifname} | awk '{print $4}' | cut -d/ -f1)"
 export DMLC_PS_ROOT_PORT=${DMLC_PS_ROOT_PORT:-12213}
@@ -26,7 +25,7 @@ export TEST_TYPE=${TEST_TYPE:=torch}
 export NCCL_DEBUG=VERSION
 # Ensure the NCCL_BUFFSIZE is larger than the message size of the compressed tensors 
 export NCCL_BUFFSIZE=16777216
-export DMLC_WORKER_ID=$2
+# export DMLC_WORKER_ID=$2
 
 IFS=', ' read -ra a <<< $gpus; 
 gpus_per_node=${#a[@]}
