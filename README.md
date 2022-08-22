@@ -5,7 +5,7 @@ This repository contains the system code and scripts that help run the Espresso 
 ## Prerequisites
 
 - CUDA == 11.1
-- PyTorch == 1.8.0
+- PyTorch >= 1.8.0
 - NCCL >= 2.8.3
 
 ## What machines?
