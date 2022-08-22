@@ -28,4 +28,4 @@ ID: the id of a machine. machines have distinct IDs that start from 0 to WORKERS
 
 The results of model training throughput with different systems are logged in model_log. 
 The metrics are `images/sec` or `tokens/sec`.
-Check them after the completion of training.
+Check the logs after the completion of training.
