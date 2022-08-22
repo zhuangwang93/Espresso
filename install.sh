@@ -1,20 +1,18 @@
-# export BYTEPS_NCCL_LINK=SHARED
-# python3 setup.py install --user
-# cd byteps/torch 
-# pip3 install -r requirements.txt
-
-# pip3 install nvidia-pyindex
-# pip3 install nvidia-dllogger 
-
-# git clone https://github.com/NVIDIA/apex
-# cd apex
-# git checkout d6b5ae5d04f531ff862f651e67f241fef88fd159
-# pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
-
-# sudo apt-get update && sudo apt-get install libgl1 -y
-# pip3 install opencv-python
-
+export BYTEPS_NCCL_LINK=SHARED
+python3 setup.py install --user
 cd byteps/torch 
+pip3 install -r requirements.txt
+
+pip3 install nvidia-pyindex
+pip3 install nvidia-dllogger 
+
+git clone https://github.com/NVIDIA/apex
+cd apex
+git checkout d6b5ae5d04f531ff862f651e67f241fef88fd159
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+
+sudo apt-get update && sudo apt-get install libgl1 -y
+pip3 install opencv-python
 
 echo "download model checkpoint for BERT-base"
 cd examples/BERT
