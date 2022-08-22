@@ -45,9 +45,10 @@ Follow the instructions in [espresso_EuroSys_AE.pdf](https://github.com/zhuangwa
 
 The DNN models used by Espresso are in [examples](https://github.com/zhuangwang93/Espresso/tree/master/byteps/torch/examples). 
 There are six DNN models and each of them has a folder under examples/
+
 Follow the instructions in each example to reproduce the experiments results in Figure 11 and Figure 12.
 
 
 ## Compression strategy selection time
 
-Follow the instruction to reproduce the experiments results in Table 4 and Table 5.
+Follow the instruction in [scheduler](https://github.com/zhuangwang93/Espresso/tree/master/byteps/torch/mergeComp/scheduler) to reproduce the experiments results in Table 4 and Table 5.
