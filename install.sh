@@ -14,6 +14,7 @@ cd ..
 
 sudo apt-get update && sudo apt-get install libgl1 -y
 pip3 install opencv-python
+sudo apt install unzip
 
 echo "download dataset for LSTM"
 mkdir ~/data
@@ -24,7 +25,6 @@ echo "download model checkpoint for BERT-base"
 cd ../BERT
 cd ./dataset/checkpoint
 wget --content-disposition https://api.ngc.nvidia.com/v2/models/nvidia/bert_pyt_ckpt_base_qa_squad11_amp/versions/19.09.0/zip -O bert_pyt_ckpt_base_qa_squad11_amp_19.09.0.zip
-sudo apt install unzip
 unzip bert_pyt_ckpt_base_qa_squad11_amp_19.09.0.zip
 cd ../../ && mkdir -p results
 

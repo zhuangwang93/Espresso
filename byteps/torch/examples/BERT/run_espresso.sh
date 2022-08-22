@@ -26,7 +26,7 @@ export BYTEPS_COMPRESSOR_K=0.01
 export OMP_NUM_THREADS=4
 export PS_VERBOSE=${PS_VERBOSE:-0}
 export TEST_TYPE=${TEST_TYPE:=torch}
-# export NCCL_DEBUG=VERSION
+export NCCL_DEBUG=VERSION
 # Ensure the NCCL_BUFFSIZE is larger than the message size of the compressed tensors 
 export NCCL_BUFFSIZE=16777216
 # export DMLC_WORKER_ID=$2
