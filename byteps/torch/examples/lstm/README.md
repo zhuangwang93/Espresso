@@ -9,7 +9,7 @@ The default location of the dataset is ~/data, and the dataset for LSTM is in ~/
 
 ## How to run
 **Note**: set the DMLC_PS_ROOT_URI and ifname in run_espresso.sh and run_baseline.sh.
-Ensure it runs on PCIe-only GPU machines.
+Make sure it runs on PCIe-only GPU machines.
 
 DMLC_PS_ROOT_URI: the IP address of the root GPU machine
 
