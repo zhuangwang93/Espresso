@@ -10,12 +10,12 @@ ifname: the network interface card name, e.g., eth0, eth2
 
 DMLC_PS_ROOT_URI: the IP address of the root machine. Any machine involved in training can serve as the root machine and its ID is 0.
 
-Run the command on each NVLink-based GPU machines 
+For E1, run the command on each NVLink-based GPU machines 
 ```bash
 bash run_nvlink_models.sh WORKERS ID
 ```
 
-and on each PCIe-only GPU machines
+For E2, run the command on each PCIe-only GPU machines
 ```bash
 bash run_pcie_models.sh WORKERS ID
 ```
