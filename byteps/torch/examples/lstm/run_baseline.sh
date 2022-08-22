@@ -46,7 +46,7 @@ export NCCL_P2P_DISABLE=1
 echo "FP32 baseline"
 BENCHMARK_ARGS="--compress --comm byteps"
 python3 -m torch.distributed.launch $DISTRIBUTED_ARGS $path/main.py --model ${model} --epochs 2 $BENCHMARK_ARGS
-
+sleep 5
 
 # BytePS-Compress
 echo "BytePS-Compress"
