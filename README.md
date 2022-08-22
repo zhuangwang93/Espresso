@@ -28,7 +28,12 @@ cd byteps/torch
 pip3 install -r requirements.txt
 ```
 
-## Examples
-The DNN models supported by Espresso are in ./byteps/torch/examples
+## AE file
 
+Follow the instructions in [espresso_EuroSys_AE.pdf](https://github.com/zhuangwang93/Espresso/blob/master/espresso_EuroSys_AE.pdf) to reproduce the experimental results in our paper.
+
+
+## Examples
+The DNN models supported by Espresso are in [examples](https://github.com/zhuangwang93/Espresso/tree/master/byteps/torch/examples). 
+There are six DNN models used in the evaluation and each of them has a folder under examples/
 Following the instructions in each example to reproduce the experiments results.
