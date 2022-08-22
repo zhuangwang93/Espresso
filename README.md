@@ -25,15 +25,11 @@ Install Espresso on each GPU machine.
 # In case you need to install PyTorch
 pip3 install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 
-git clone https://github.com/zhuangwang93/Espresso.git
+git clone https://github.com/zhuangwang93/Espresso.git --recursive
 cd Espresso
-git submodule update --init
 
-export BYTEPS_NCCL_LINK=SHARED
-python3 setup.py install --user
-cd byteps/torch
-
-pip3 install -r requirements.txt
+# install dependencies and datasets for training
+bash install.sh
 ```
 
 ## AE file
