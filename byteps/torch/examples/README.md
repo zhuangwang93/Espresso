@@ -22,7 +22,7 @@ bash run_pcie_models.sh WORKERS ID
 
 WORKERS: the number of GPU machines in the training
 
-ID: the id of a machine. machines have distinct IDs that start from 0
+ID: the id of a machine. machines have distinct IDs that start from 0 to WORKERS-1
 
 ## Results
 
