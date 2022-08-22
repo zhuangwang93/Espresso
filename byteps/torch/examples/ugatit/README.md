@@ -21,6 +21,7 @@ pip3 install opencv-python
 
 # How to run
 **Note**: Make sure the dataset is in the right location. Set the DMLC_PS_ROOT_URI and ifname in run_espresso.sh and run_baseline.sh.
+Ensure it runs on NVLink-based GPU machines.
 
 DMLC_PS_ROOT_URI: the IP address of the root GPU machine
 
