@@ -12,7 +12,7 @@ The default location of the dataset is ~/data, and the dataset for VGG16 and Res
 
 ## How to run
 **Note**: Make sure the dataset is in the right location. Set DMLC_PS_ROOT_URI and ifname in run_espresso.sh and run_baseline.sh.
-Ensure it runs on PCIe-only GPU machines.
+Make sure it runs on PCIe-only GPU machines.
 
 DMLC_PS_ROOT_URI: the IP address of the root GPU machine
 
