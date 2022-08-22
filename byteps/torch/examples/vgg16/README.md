@@ -1,4 +1,4 @@
-# Image Classification
+# VGG16
 
 
 ## Download the dataset
@@ -11,7 +11,7 @@ tar xf imagewang.tgz
 The default location of the dataset is ~/data, and the dataset for VGG16 and ResNet101 is in ~/data/imagewang
 
 ## How to run
-**Note**: Make sure the dataset is in the right location. Set DMLC_PS_ROOT_URI and ifname in run_espresso.sh and run_baseline.sh
+**Note**: Make sure the dataset is in the right location. Set DMLC_PS_ROOT_URI and ifname in run_espresso.sh and run_baseline.sh. Make sure it runs on PCIe-only GPU machines.
 
 DMLC_PS_ROOT_URI: the IP address of the root GPU machine
 
