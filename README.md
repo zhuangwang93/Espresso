@@ -19,7 +19,7 @@ It is also fine to perform PCIe-only experiments on NVLink-based machines with e
 
 ## Installation
 
-Install Espresso on each GPU machine.
+Install Espresso on each GPU machine. Please make sure the machines can successfully install [BytePS](https://github.com/bytedance/byteps).
 
 ```bash
 # In case you need to install PyTorch
