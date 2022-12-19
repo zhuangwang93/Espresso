@@ -43,8 +43,3 @@ The DNN models used by Espresso are in [examples](https://github.com/zhuangwang9
 There are six DNN models and each of them has a folder under examples/
 
 Follow the instructions in this directory to reproduce the experiments results in Figure 11 and Figure 12.
-
-
-## Compression strategy selection time
-
-Follow the instruction in [scheduler](https://github.com/zhuangwang93/Espresso/tree/master/byteps/torch/mergeComp/scheduler) to reproduce the experiments results in Table 4 and Table 5.
