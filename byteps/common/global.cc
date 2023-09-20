@@ -606,7 +606,7 @@ bool BytePSGlobal::IsAllTensorOutput(const std::string& name) {
   std::lock_guard<std::mutex> lock(_context_mutex);
   BPS_CHECK(_name2end.find(name) != _name2end.end())
       << "Output tensor must been registered to recorder first";
-  //  _output_counter decreases by 1 to confirm the arrival of this tensro
+  //  _output_counter decreases by 1 to confirm the arrival of this tensor
   _output_counter -= 1;
   if (_output_counter == 0)
     return true;
@@ -616,6 +616,7 @@ bool BytePSGlobal::IsAllTensorOutput(const std::string& name) {
 
 void BytePSGlobal::OutputTraces() {
   // Asynchronously output communication traces
+  // Need to make sure the folders already exist for trace
   auto trace_path =
       _trace_dir + "/" + std::to_string(_local_rank) + "/comm.json";
   // Output these traces
