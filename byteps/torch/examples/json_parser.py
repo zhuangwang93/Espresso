@@ -1,7 +1,7 @@
 import json
   
 # Opening JSON file
-f = open('imagenet_benchmark/traces/0/tensor_ready.json',)
+f = open('trace/0/tensor_ready.json',)
   
 # returns JSON object as 
 # a dictionary
