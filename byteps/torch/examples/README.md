@@ -29,3 +29,17 @@ ID: the id of a machine. machines have distinct IDs that start from 0 to WORKERS
 The results of model training throughput with different systems are logged in model_log. 
 The metrics are `images/sec` or `tokens/sec`.
 Check the logs after the completion of training.
+
+
+## For trace of time gaps
+
+Add the following environment variables in Shell scripts
+
+```bash
+export BYTEPS_TRACE_ON=1
+export BYTEPS_TRACE_START_STEP=10
+export BYTEPS_TRACE_END_STEP=20
+export BYTEPS_TRACE_DIR=trace
+```
+
+Make sure there is a folder named `trace/0/` and then run the training without applying compression algorithms. Extract the time gaps with `byteps/torch/examples/json_parser.py` and remember to change the input file in json_parse.py.
